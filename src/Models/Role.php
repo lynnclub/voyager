@@ -11,6 +11,8 @@ class Role extends Model
 {
     use HasFactory;
 
+    protected $table = 'voyager_roles';
+
     protected $guarded = [];
 
     public function users()

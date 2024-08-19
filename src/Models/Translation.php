@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Translation extends Model
 {
-    protected $table = 'translations';
+    protected $table = 'voyager_translations';
 
     protected $fillable = ['table_name', 'column_name', 'foreign_key', 'locale', 'value'];
 }

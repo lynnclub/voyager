@@ -15,7 +15,7 @@ class DataType extends Model
 
     protected $translatable = ['display_name_singular', 'display_name_plural'];
 
-    protected $table = 'data_types';
+    protected $table = 'voyager_data_types';
 
     protected $fillable = [
         'name',

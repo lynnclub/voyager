@@ -267,7 +267,7 @@ class MultilingualTest extends TestCase
 
 class TranslatableModel extends Model
 {
-    protected $table = 'posts';
+    protected $table = 'voyager_posts';
 
     use Translatable;
 

@@ -78,7 +78,7 @@ class UserProfileTest extends TestCase
              ->press(__('voyager::generic.save'))
              ->seePageIs($this->listOfUsers);
 
-        $updatedPassword = DB::table('users')->where('id', 1)->first()->password;
+        $updatedPassword = DB::table('voyager_users')->where('id', 1)->first()->password;
         $this->assertTrue(Hash::check('voyager-rocks', $updatedPassword));
     }
 

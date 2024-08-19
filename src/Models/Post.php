@@ -14,6 +14,8 @@ class Post extends Model
     use Translatable;
     use Resizable;
 
+    protected $table = 'voyager_posts';
+
     protected $translatable = ['title', 'seo_title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords'];
 
     public const PUBLISHED = 'PUBLISHED';
