@@ -53,8 +53,8 @@ abstract class Controller extends BaseController
          * Prepare Translations and Transform data
          */
         $translations = is_bread_translatable($data)
-                        ? $data->prepareTranslations($request)
-                        : [];
+            ? $data->prepareTranslations($request)
+            : [];
 
         foreach ($rows as $row) {
             // if the field for this row is absent from the request, continue
@@ -62,7 +62,7 @@ abstract class Controller extends BaseController
             if (!$request->hasFile($row->field) && !$request->has($row->field) && $row->type !== 'checkbox') {
                 // if the field is a belongsToMany relationship, don't remove it
                 // if no content is provided, that means the relationships need to be removed
-                if ($row->details->type !== 'belongsToMany') {
+                if (isset($row->details->type) && $row->details->type !== 'belongsToMany') {
                     continue;
                 }
             }
@@ -171,7 +171,7 @@ abstract class Controller extends BaseController
             if ($old_path != $new_path &&
                 !Storage::disk(config('voyager.storage.disk'))->exists($new_path) &&
                 Storage::disk(config('voyager.storage.disk'))->exists($old_path)
-                )
+            )
             {
                 $request->session()->forget([$slug.'_path', $slug.'_uuid']);
                 Storage::disk(config('voyager.storage.disk'))->move($old_path, $new_path);
@@ -281,7 +281,7 @@ abstract class Controller extends BaseController
                 return (new ContentImage($request, $slug, $row, $options))->handle();
             /********** DATE TYPE **********/
             case 'date':
-            /********** TIMESTAMP TYPE **********/
+                /********** TIMESTAMP TYPE **********/
             case 'timestamp':
                 return (new Timestamp($request, $slug, $row, $options))->handle();
             /********** COORDINATES TYPE **********/
