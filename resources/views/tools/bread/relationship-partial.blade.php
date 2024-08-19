@@ -1,5 +1,5 @@
 @php
-    $relationshipDetails = $relationship['details'];
+    $relationshipDetails = $relationship['details'] ?? [];
     $relationshipKeyArray = array_fill_keys(["model", "table", "type", "column", "key", "label", "pivot_table", "pivot", "taggable"], '');
 
     $adv_details = array_diff_key(json_decode(json_encode($relationshipDetails), true), $relationshipKeyArray);
