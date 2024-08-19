@@ -62,19 +62,19 @@ abstract class Controller extends BaseController
             if (!$request->hasFile($row->field) && !$request->has($row->field) && $row->type !== 'checkbox') {
                 // if the field is a belongsToMany relationship, don't remove it
                 // if no content is provided, that means the relationships need to be removed
-                if (isset($row->details->type) && $row->details->type !== 'belongsToMany') {
+                if ($row->details->type !== 'belongsToMany') {
                     continue;
                 }
             }
 
             // Value is saved from $row->details->column row
-            if ($row->type == 'relationship' && isset($row->details->type) && $row->details->type == 'belongsTo') {
+            if ($row->type == 'relationship' && $row->details->type == 'belongsTo') {
                 continue;
             }
 
             $content = $this->getContentBasedOnType($request, $slug, $row, $row->details);
 
-            if ($row->type == 'relationship' && (!isset($row->details->type) || $row->details->type != 'belongsToMany')) {
+            if ($row->type == 'relationship' && $row->details->type != 'belongsToMany') {
                 $row->field = @$row->details->column;
             }
 
@@ -115,7 +115,7 @@ abstract class Controller extends BaseController
                 }
             }
 
-            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type == 'belongsToMany') {
+            if ($row->type == 'relationship' && $row->details->type == 'belongsToMany') {
                 // Only if select_multiple is working with a relationship
                 $multi_select[] = [
                     'model'           => $row->details->model,
