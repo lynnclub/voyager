@@ -68,13 +68,13 @@ abstract class Controller extends BaseController
             }
 
             // Value is saved from $row->details->column row
-            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type == 'belongsTo') {
+            if ($row->type == 'relationship' && isset($row->details->type) && $row->details->type == 'belongsTo') {
                 continue;
             }
 
             $content = $this->getContentBasedOnType($request, $slug, $row, $row->details);
 
-            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type != 'belongsToMany') {
+            if ($row->type == 'relationship' && isset($row->details->type) && $row->details->type != 'belongsToMany') {
                 $row->field = @$row->details->column;
             }
 
@@ -168,10 +168,10 @@ abstract class Controller extends BaseController
                 $data->{$row->field} = str_replace($uuid, $data->getKey(), $data->{$row->field});
             });
             $data->save();
-            if ($old_path != $new_path && 
-                !Storage::disk(config('voyager.storage.disk'))->exists($new_path) && 
+            if ($old_path != $new_path &&
+                !Storage::disk(config('voyager.storage.disk'))->exists($new_path) &&
                 Storage::disk(config('voyager.storage.disk'))->exists($old_path)
-                ) 
+                )
             {
                 $request->session()->forget([$slug.'_path', $slug.'_uuid']);
                 Storage::disk(config('voyager.storage.disk'))->move($old_path, $new_path);
