@@ -68,13 +68,13 @@ abstract class Controller extends BaseController
             }
 
             // Value is saved from $row->details->column row
-            if ($row->type == 'relationship' && $row->details->type == 'belongsTo') {
+            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type == 'belongsTo') {
                 continue;
             }
 
             $content = $this->getContentBasedOnType($request, $slug, $row, $row->details);
 
-            if ($row->type == 'relationship' && $row->details->type != 'belongsToMany') {
+            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type != 'belongsToMany') {
                 $row->field = @$row->details->column;
             }
 
@@ -115,7 +115,7 @@ abstract class Controller extends BaseController
                 }
             }
 
-            if ($row->type == 'relationship' && $row->details->type == 'belongsToMany') {
+            if ($row->type == 'relationship' && is_object($row->details) && $row->details->type == 'belongsToMany') {
                 // Only if select_multiple is working with a relationship
                 $multi_select[] = [
                     'model'           => $row->details->model,
