@@ -5,9 +5,9 @@
 <p align="center"><a href="https://github.com/thedevdojo/genesis" target="_blank"><img src="https://github.com/thedevdojo/voyager/assets/601261/6ffa6ac4-ea1e-4c8a-8360-b347377b8201" height="auto" width="100%"></a></p>
 
 <p align="center">
-<a href="https://packagist.org/packages/tcg/voyager"><img src="https://poser.pugx.org/tcg/voyager/downloads.svg?format=flat" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/tcg/voyager"><img src="https://poser.pugx.org/tcg/voyager/v/stable.svg?format=flat" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/tcg/voyager"><img src="https://poser.pugx.org/tcg/voyager/license.svg?format=flat" alt="License"></a>
+<a href="https://packagist.org/packages/lynnclub/voyager"><img src="https://poser.pugx.org/lynnclub/voyager/downloads.svg?format=flat" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/lynnclub/voyager"><img src="https://poser.pugx.org/lynnclub/voyager/v/stable.svg?format=flat" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/lynnclub/voyager"><img src="https://poser.pugx.org/lynnclub/voyager/license.svg?format=flat" alt="License"></a>
 <a href="https://github.com/larapack/awesome-voyager"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome Voyager"></a>
 </p>
 
@@ -37,13 +37,13 @@ Laravel Admin & BREAD System (Browse, Read, Edit, Add, & Delete), supporting Lar
 After creating your new Laravel application you can include the Voyager package with the following command:
 
 ```bash
-composer require tcg/voyager
+composer require lynnclub/voyager
 ```
 
 > If you are installing this on Laravel 10, we are working on getting a permanent release available; however, you can still use this with Larvel 10 by requiring the following:
 
 ```bash
-composer require tcg/voyager dev-1.6-l10
+composer require lynnclub/voyager dev-1.6-l10
 ```
 
 ### 2. Add the DB Credentials & APP_URL
