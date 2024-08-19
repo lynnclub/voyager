@@ -992,7 +992,7 @@ class VoyagerBaseController extends Controller
             if ($item->type != 'relationship') {
                 return true;
             }
-            if ($item->details->type != 'belongsTo') {
+            if (is_object($item->details) && $item->details->type != 'belongsTo') {
                 return false;
             }
 
