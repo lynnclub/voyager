@@ -74,7 +74,7 @@ abstract class Controller extends BaseController
 
             $content = $this->getContentBasedOnType($request, $slug, $row, $row->details);
 
-            if ($row->type == 'relationship' && isset($row->details->type) && $row->details->type != 'belongsToMany') {
+            if ($row->type == 'relationship' && (!isset($row->details->type) || $row->details->type != 'belongsToMany')) {
                 $row->field = @$row->details->column;
             }
 
