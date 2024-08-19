@@ -18,7 +18,7 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         //Data Type
-        $dataType = $this->dataType('name', 'categories');
+        $dataType = $this->dataType('name', 'voyager_categories');
         if (!$dataType->exists) {
             $dataType->fill([
                 'slug'                  => 'categories',
@@ -176,7 +176,7 @@ class CategoriesTableSeeder extends Seeder
         }
 
         //Permissions
-        Permission::generateFor('categories');
+        Permission::generateFor('voyager_categories');
 
         //Content
         $category = Category::firstOrNew([

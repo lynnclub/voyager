@@ -19,14 +19,14 @@ class Role extends Model
     {
         $userModel = Voyager::modelClass('User');
 
-        return $this->belongsToMany($userModel, 'user_roles')
-                    ->select(app($userModel)->getTable().'.*')
-                    ->union($this->hasMany($userModel))->getQuery();
+        return $this->belongsToMany($userModel, 'voyager_user_roles')
+            ->select(app($userModel)->getTable() . '.*')
+            ->union($this->hasMany($userModel))->getQuery();
     }
 
     public function permissions()
     {
-        return $this->belongsToMany(Voyager::modelClass('Permission'));
+        return $this->belongsToMany(Voyager::modelClass('Permission'), 'voyager_permission_role');
     }
 
     protected static function newFactory()

@@ -9,6 +9,9 @@ class AddVoyagerUserFields extends Migration
      */
     public function up()
     {
+        Schema::rename('users', 'voyager_users');
+        Schema::rename('password_resets', 'voyager_password_resets');
+
         Schema::table('voyager_users', function ($table) {
             if (!Schema::hasColumn('voyager_users', 'avatar')) {
                 $table->string('avatar')->nullable()->after('email')->default('users/default.png');

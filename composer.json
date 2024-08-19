@@ -1,5 +1,5 @@
 {
-    "name": "tcg/voyager",
+    "name": "lynnclub/voyager",
     "description": "A Laravel Admin Package for The Control Group to make your life easier and steer your project in the right direction",
     "keywords": ["laravel", "admin", "panel"],
     "license": "MIT",
@@ -27,7 +27,7 @@
     },
     "require-dev": {
         "phpunit/phpcov": ">=6.0",
-        "phpunit/phpunit": ">=8.0",
+        "phpunit/phpunit": "^9.6",
         "laravel/framework": "~8.0|~9.0",
         "orchestra/testbench": ">=4.0",
         "laravel/browser-kit-testing": ">=6.1.0",

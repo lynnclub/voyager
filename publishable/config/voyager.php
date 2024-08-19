@@ -80,7 +80,7 @@ return [
 
     'database' => [
         'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'personal_access_tokens', 'settings'],
+            'hidden' => ['migrations', 'voyager_data_rows', 'voyager_data_types', 'voyager_menu_items', 'voyager_password_resets', 'voyager_permission_role', 'voyager_personal_access_tokens', 'voyager_settings'],
         ],
         'autoload_migrations' => true,
     ],

@@ -25,12 +25,12 @@ class PermissionsTableSeeder extends Seeder
             ]);
         }
 
-        Permission::generateFor('menus');
+        Permission::generateFor('voyager_menus');
 
-        Permission::generateFor('roles');
+        Permission::generateFor('voyager_roles');
 
-        Permission::generateFor('users');
+        Permission::generateFor('voyager_users');
 
-        Permission::generateFor('settings');
+        Permission::generateForName('settings','voyager_settings');
     }
 }

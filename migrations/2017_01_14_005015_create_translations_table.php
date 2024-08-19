@@ -23,7 +23,7 @@ class CreateTranslationsTable extends Migration
 
             $table->text('value');
 
-            $table->unique(['table_name', 'column_name', 'foreign_key', 'locale']);
+            $table->unique(['table_name', 'column_name', 'foreign_key', 'locale'], 'table_column_foreign_locale_unique');
 
             $table->timestamps();
         });

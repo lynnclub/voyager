@@ -21,7 +21,7 @@ class PagesTableSeeder extends Seeder
         $dataType = $this->dataType('slug', 'pages');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'pages',
+                'name'                  => 'voyager_pages',
                 'display_name_singular' => __('voyager::seeders.data_types.page.singular'),
                 'display_name_plural'   => __('voyager::seeders.data_types.page.plural'),
                 'icon'                  => 'voyager-file-text',
@@ -248,7 +248,7 @@ class PagesTableSeeder extends Seeder
         }
 
         //Permissions
-        Permission::generateFor('pages');
+        Permission::generateFor('voyager_pages');
         //Content
         $page = Page::firstOrNew([
             'slug' => 'hello-world',

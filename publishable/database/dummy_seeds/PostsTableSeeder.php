@@ -19,7 +19,7 @@ class PostsTableSeeder extends Seeder
         $dataType = $this->dataType('slug', 'posts');
         if (!$dataType->exists) {
             $dataType->fill([
-                'name'                  => 'posts',
+                'name'                  => 'voyager_posts',
                 'display_name_singular' => __('voyager::seeders.data_types.post.singular'),
                 'display_name_plural'   => __('voyager::seeders.data_types.post.plural'),
                 'icon'                  => 'voyager-news',
@@ -318,7 +318,7 @@ class PostsTableSeeder extends Seeder
         }
 
         //Permissions
-        Permission::generateFor('posts');
+        Permission::generateFor('voyager_posts');
 
         //Content
         $post = $this->findPost('lorem-ipsum-post');

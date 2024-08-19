@@ -15,7 +15,7 @@ class AddUserRoleRelationship extends Migration
     {
         Schema::table('voyager_users', function (Blueprint $table) {
             $table->bigInteger('role_id')->unsigned()->change();
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->foreign('role_id')->references('id')->on('voyager_roles');
         });
     }
 

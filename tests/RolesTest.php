@@ -66,13 +66,13 @@ class RolesTest extends TestCase
      */
     public function testEditRolePermissions()
     {
-        $this->notSeeInDatabase('permission_role', ['permission_id' => $this->permission_id, 'role_id' => 2]);
+        $this->notSeeInDatabase('voyager_permission_role', ['permission_id' => $this->permission_id, 'role_id' => 2]);
         Role::find(2)->permissions()->attach($this->permission_id);
 
         $this->visit(route('voyager.roles.edit', 2))
              ->uncheck('permissions['.$this->permission_id.']')
              ->press(__('voyager::generic.submit'))
              ->seePageIs(route('voyager.roles.index'))
-             ->notSeeInDatabase('permission_role', ['permission_id' => $this->permission_id, 'role_id' => 2]);
+             ->notSeeInDatabase('voyager_permission_role', ['permission_id' => $this->permission_id, 'role_id' => 2]);
     }
 }

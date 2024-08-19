@@ -13,16 +13,25 @@ class Permission extends Model
 
     public function roles()
     {
-        return $this->belongsToMany(Voyager::modelClass('Role'));
+        return $this->belongsToMany(Voyager::modelClass('Role'), 'voyager_permission_role');
     }
 
     public static function generateFor($table_name)
     {
-        self::firstOrCreate(['key' => 'browse_'.$table_name, 'table_name' => $table_name]);
-        self::firstOrCreate(['key' => 'read_'.$table_name, 'table_name' => $table_name]);
-        self::firstOrCreate(['key' => 'edit_'.$table_name, 'table_name' => $table_name]);
-        self::firstOrCreate(['key' => 'add_'.$table_name, 'table_name' => $table_name]);
-        self::firstOrCreate(['key' => 'delete_'.$table_name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'browse_' . $table_name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'read_' . $table_name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'edit_' . $table_name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'add_' . $table_name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'delete_' . $table_name, 'table_name' => $table_name]);
+    }
+
+    public static function generateForName($name, $table_name)
+    {
+        self::firstOrCreate(['key' => 'browse_' . $name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'read_' . $name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'edit_' . $name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'add_' . $name, 'table_name' => $table_name]);
+        self::firstOrCreate(['key' => 'delete_' . $name, 'table_name' => $table_name]);
     }
 
     public static function removeFrom($table_name)
