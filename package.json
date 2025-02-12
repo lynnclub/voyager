@@ -13,16 +13,16 @@
     "bootstrap-sass": "^3.4.3",
     "cross-env": "^7.0.3",
     "laravel-mix": "^6.0.49",
-    "postcss": "^8.4.18",
+    "postcss": "^8.5.2",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
-    "vue-loader": "^15.9.7",
-    "vue-template-compiler": "^2.7.13"
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^2.7.16"
   },
   "dependencies": {
     "ace-builds": "^1.12.3",
     "animate.css": "^4.1.1",
-    "bootstrap": "^3.4.1",
+    "bootstrap": "^5.0.0",
     "bootstrap-datepicker": "^1.9.0",
     "bootstrap-toggle": "^2.2.2",
     "brace": "^0.11.1",
@@ -39,8 +39,8 @@
     "nestable2": "^1.6.0",
     "perfect-scrollbar": "^1.5.5",
     "select2": "^4.0.13",
-    "tinymce": "^6.2.0",
+    "tinymce": "^7.2.0",
     "toastr": "^2.1.4",
-    "vue": "^2.7.13"
+    "vue": "^3.0.0"
   }
 }
